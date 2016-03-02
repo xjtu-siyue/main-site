@@ -10,7 +10,7 @@ var MenuItem = require('material-ui/lib/menus/menu-item');
 var FontIcon = require('material-ui/lib/font-icon');
 var IconButton = require('material-ui/lib/icon-button');
 
-var WorkList = require('./work-list.jsx');
+var RepositoryList = require('./repository-list.jsx');
 
 module.exports = React.createClass({
     displayName : "Home",
@@ -22,6 +22,7 @@ module.exports = React.createClass({
         return {
             title : this.props.appTitle,
             open : false,
+            content : this.getRepositoryList(),
         };
     },
     getStyle : function getStyle(){
@@ -39,6 +40,9 @@ module.exports = React.createClass({
             },
             
         }
+    },
+    getRepositoryList : function(){
+        return (<RepositoryList />)
     },
     handleToggleLeftNav : function handleToggleLeftNav(){
         this.setState({
