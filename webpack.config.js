@@ -3,8 +3,8 @@ module.exports = {
         './views/index.jsx'
     ],
     output: {
-        path: __dirname + '/public/bundle/',
-        publicPath: "/public/bundle/",
+        path: __dirname + '/public/',
+        publicPath: "/public/",
         filename: 'app.js'
     },
     module: {

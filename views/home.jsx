@@ -9,7 +9,7 @@ var Paper = require('material-ui/lib/paper');
 var MenuItem = require('material-ui/lib/menus/menu-item');
 var FontIcon = require('material-ui/lib/font-icon');
 var IconButton = require('material-ui/lib/icon-button');
-
+var SvgIcon = require('material-ui/lib/svg-icons');
 var RepositoryList = require('./repository-list.jsx');
 
 module.exports = React.createClass({
@@ -60,7 +60,14 @@ module.exports = React.createClass({
                     title={this.state.title}
                     style={styles.AppBar}
                     onLeftIconButtonTouchTap={this.handleToggleLeftNav}
-                    iconElementRight={<IconButton><a href="https://github.com/xjtu-siyue" target="_blank"><FontIcon className="material-icons" color="white">code</FontIcon></a></IconButton>}
+                    iconElementRight={
+                        <IconButton 
+                            tooltip="View Code"
+                            onTouchTap={()=>{window.location = 'https://github.com/xjtu-siyue'}}
+                        >
+                            <SvgIcon.ActionCode color="white"/>
+                        </IconButton>
+                    }
                     onRightIconButtonTouchTap={this.handleGoToGitHub}
                 />
                 <LeftNav
