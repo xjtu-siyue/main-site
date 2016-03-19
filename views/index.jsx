@@ -26,4 +26,7 @@ var Index = React.createClass({
         );
     }
 });
-ReactDOM.render(<Index appTitle="思跃社" />, document.getElementById('main'));
+
+var app = document.createElement('div');
+document.body.appendChild(app);
+ReactDOM.render(<Index appTitle="思跃社" />, app);
