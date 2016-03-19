@@ -1,6 +1,9 @@
 var User = require('../models/user');
 var Repository = require('../models/repository');
 module.exports = require('express').Router()
+    .get('/app.js',function(req,res,next){
+        res.redirect('http://7xs25s.com1.z0.glb.clouddn.com/org.isiyue.js');
+    })
     .post('/user',function(req,res,next){
         var username = req.body.username;
         var user = new User({
